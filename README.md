@@ -1,5 +1,5 @@
 # Service Mesh Demo at DFS
-This is a minimal demo of Service Mesh catered for Discover Financial Services.  The demo is designed to be followd by the "RedBeard" deck and showcases the simplicity of enabling routing policies using Service Mesh.  This demo can be extended to show RBAC controls, MTLS, and other Service Mesh features but for now it showcases Routing policies, Kiali, and Jaeger.  
+This is a minimal demo of Service Mesh catered for Discover Financial Services.  The demo is designed to be followed by the "RedBeard" deck and showcases the simplicity of enabling routing policies using Service Mesh.  This demo can be extended to show RBAC controls, MTLS, and other Service Mesh features but for now it showcases Routing policies, Kiali, and Jaeger.  
 
 Login to Cluster:
 http://console-openshift-console.apps.cluster-dfs-3370.dfs-3370.sandbox744.opentlc.com 
@@ -8,7 +8,7 @@ admin r3dh4t1!
 ### Login and Setup
 ```oc login --token=N1oBMcMrB8y9TygpU7PAbXMeGcgtuEjbIOL52edur9s --server=https://api.cluster-dfs-3370.dfs-3370.sandbox744.opentlc.com:6443```
 * Show basic Service Mesh components
-* Show application compnents
+* Show application components (three services and versioning)
 * Show sidecar proxy
 
 ### Observability with Kiali and Jaeger
@@ -17,6 +17,8 @@ Kiali Route: `echo https://$(oc get route -n user1-smcp kiali -o 'jsonpath={.spe
 Kiali Route: `kiali-user1-smcp.apps.cluster-dfs-3370.dfs-3370.sandbox744.opentlc.com`
 
 Jaeger Route: `echo https://$(oc get route -n user1-smcp jaeger -o 'jsonpath={.spec.host}')`
+
+Showcase Tracing, REST metrics, and Graphs.
 
 #### Generate Load
 ```
@@ -35,7 +37,7 @@ The Virtual Service specifying the routing rules to apply when the host is addre
    * Matching on a transport type
    * Matching on specific transport attributes such as headers or path
 
-#### Destinatio Rules
+#### Destination Rules
 The Destination Rule specifying policies to be applied to the destination such as
    * Load balancing
    * Outlier detection
