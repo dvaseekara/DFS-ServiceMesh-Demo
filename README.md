@@ -1,5 +1,5 @@
 # Service Mesh Demo at DFS
-This is a minimal demo of Service Mesh catered for Discover Financial Services.  The demo is designed to be followed by the "RedBeard" deck and showcases the simplicity of enabling routing policies using Service Mesh.  This demo can be extended to show RBAC controls, MTLS, and other Service Mesh features but for now it showcases Routing policies, Kiali, and Jaeger.  
+This is a minimal demo of Service Mesh catered for Discover Financial Services.  The demo is designed to follow the "RedBeard" deck and showcases the simplicity of enabling routing policies using Service Mesh.  This demo can be extended to show RBAC controls, MTLS, and other Service Mesh features but for now it showcases Routing policies, Kiali, and Jaeger.  
 
 RedBeard Deck:  https://docs.google.com/presentation/d/1J3I_UhGScsJgnJxpmOKZwamv8Sf3UmSx9MI_yKg6GQk/edit#slide=id.g38d28c45af_2_14
 
