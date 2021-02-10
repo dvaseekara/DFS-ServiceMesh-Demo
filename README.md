@@ -13,7 +13,9 @@ admin r3dh4t1!
 
 ### Observability with Kiali and Jaeger
 Kiali Route: `echo https://$(oc get route -n user1-smcp kiali -o 'jsonpath={.spec.host}')`
+
 Kiali Route: `kiali-user1-smcp.apps.cluster-dfs-3370.dfs-3370.sandbox744.opentlc.com`
+
 Jaeger Route: `echo https://$(oc get route -n user1-smcp jaeger -o 'jsonpath={.spec.host}')`
 
 #### Generate Load
@@ -28,29 +30,29 @@ Look at existing SM components:  'oc get istio-io -n user1-tutorial'
 Detailed Look at SM components:  'oc describe istio-io -n user1-tutorial'
 
 #### Virtual Service
-    The Virtual Service specifying the routing rules to apply when the host is addressed. These routing rules can include
-       * Routing to specific destinations
-       * Matching on a transport type
-       * Matching on specific transport attributes such as headers or path
+The Virtual Service specifying the routing rules to apply when the host is addressed. These routing rules can include
+   * Routing to specific destinations
+   * Matching on a transport type
+   * Matching on specific transport attributes such as headers or path
 
 #### Destinatio Rules
-	The Destination Rule specifying policies to be applied to the destination such as
-       * Load balancing
-       * Outlier detection
-       * Transport Encryption (TLS)
-       * Connection Pools
+The Destination Rule specifying policies to be applied to the destination such as
+   * Load balancing
+   * Outlier detection
+   * Transport Encryption (TLS)
+   * Connection Pools
 	   
 #### Demonstration of 80-20
-	Destination Rule: 'oc apply -f destination-rule.yml -n user1-tutorial'
-	Virtual Service 80-20: 'oc apply -f virtual-service-80-20.yml -n user1-tutorial'
+Destination Rule: 'oc apply -f destination-rule.yml -n user1-tutorial'
+Virtual Service 80-20: 'oc apply -f virtual-service-80-20.yml -n user1-tutorial'
 
 #### Demonstration of Canary Deployments
-	Virtual Service Canary-deployment:  'oc apply -f canary-deployment.yml -n user1-tutorial'
-	curl: 'curl -H "user-location: Boston" http://${INGRESS_GATEWAY}/'
-	Cleanup:  'oc delete virtualservice recommendation -n admin-tutorial'
-	
+Virtual Service Canary-deployment:  'oc apply -f canary-deployment.yml -n user1-tutorial'
+curl: 'curl -H "user-location: Boston" http://${INGRESS_GATEWAY}/'
+Cleanup:  'oc delete virtualservice recommendation -n admin-tutorial'
+
 #### Demonstrate Mirroring
-	* Not enough time for this.  Just describe it
+* Not enough time for this.  Just describe it
 
 
 
